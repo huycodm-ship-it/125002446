@@ -41,7 +41,7 @@
   --animate-duration: 700ms;
 }
 
-:root[data-theme="dark"] {
+:root:has(#theme-toggle:checked) {
   color-scheme: dark;
   --page-bg: #10182a;
   --surface: #19243b;
