@@ -1,0 +1,332 @@
+/* =====================================================
+   1. DESIGN SYSTEM: Tất cả giá trị màu nằm trong :root.
+   Đổi data-theme sẽ thay các biến được sử dụng toàn trang.
+   ===================================================== */
+:root {
+  color-scheme: light;
+  --page-bg: #ffffff;
+  --surface: #ffffff;
+  --surface-soft: #f4f6fb;
+  --hero-bg: #edf2ff;
+  --text: #172340;
+  --muted: #5f6b82;
+  --primary: #2049db;
+  --primary-hover: #1736aa;
+  --on-primary: #ffffff;
+  --accent: #be4b24;
+  --border: #dce2ee;
+  --focus: #315cff;
+  --badge-bg: #ffffff;
+  --badge-text: #172340;
+  --footer-bg: #142140;
+  --footer-text: #ffffff;
+  --footer-muted: #c0cce1;
+  --footer-border: #394661;
+  --error: #b42318;
+  --error-bg: #fff1ef;
+  --success: #166442;
+  --success-bg: #ebf8f1;
+  --avatar-warm: #fff0e4;
+  --avatar-cool: #e4f3ef;
+  --avatar-warm-text: #98451e;
+  --avatar-cool-text: #21634e;
+  --shadow: 0 14px 40px #1421400d;
+  --shadow-hover: 0 16px 40px #14214017;
+  --overlay: #14214018;
+  --clear: transparent;
+  --font-body: "Segoe UI", Arial, sans-serif;
+  --radius: 16px;
+  --radius-small: 9px;
+  --container: 1180px;
+  --animate-duration: 700ms;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page-bg: #10182a;
+  --surface: #19243b;
+  --surface-soft: #1c2a43;
+  --hero-bg: #14233e;
+  --text: #f2f5ff;
+  --muted: #b5c3dc;
+  --primary: #abc0ff;
+  --primary-hover: #c4d2ff;
+  --on-primary: #152443;
+  --accent: #ffb496;
+  --border: #354560;
+  --focus: #c0d0ff;
+  --badge-bg: #18243b;
+  --badge-text: #f2f5ff;
+  --footer-bg: #0b1220;
+  --footer-text: #f2f5ff;
+  --footer-muted: #b5c3dc;
+  --footer-border: #354560;
+  --error: #ffb4a9;
+  --error-bg: #3d2028;
+  --success: #99e0b7;
+  --success-bg: #16362d;
+  --avatar-warm: #3a2c29;
+  --avatar-cool: #193b36;
+  --avatar-warm-text: #ffc1a1;
+  --avatar-cool-text: #a1e1d0;
+  --shadow: 0 14px 40px #0000001f;
+  --shadow-hover: 0 16px 40px #00000033;
+  --overlay: #00000020;
+}
+
+/* 2. NỀN TẢNG + CSS GRID CHO ĐÚNG 5 KHỐI LỚN */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+body { margin: 0; font: 1rem/1.65 var(--font-body); color: var(--text); background: var(--page-bg); }
+.page-layout { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-areas: "header" "banner" "content" "form" "footer"; }
+main { display: contents; }
+.site-header { grid-area: header; }
+.hero { grid-area: banner; }
+.catalog { grid-area: content; }
+.registration { grid-area: form; }
+.site-footer { grid-area: footer; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; }
+button, a, input, select, textarea { -webkit-tap-highlight-color: var(--clear); }
+button, .button { cursor: pointer; }
+button { color: inherit; }
+img { display: block; max-width: 100%; }
+figure, p, h1, h2, h3, h4 { margin: 0; }
+h1, h2, h3, h4 { line-height: 1.2; }
+h1 { font-size: clamp(2.5rem, 4.25vw, 3.9rem); font-weight: 750; letter-spacing: -0.055em; }
+h2 { font-size: clamp(1.9rem, 3vw, 2.65rem); letter-spacing: -0.035em; font-weight: 700; }
+h3 { font-size: 1.2rem; letter-spacing: -0.025em; }
+small { font-size: .875rem; }
+::selection { color: var(--on-primary); background: var(--primary); }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
+[hidden] { display: none !important; }
+.container { width: min(var(--container), calc(100% - 64px)); margin-inline: auto; }
+.section-space { padding-block: 80px; }
+.eyebrow { margin-bottom: 18px; color: var(--primary); font-size: .75rem; font-weight: 750; letter-spacing: .14em; }
+.button { display: inline-flex; justify-content: center; align-items: center; gap: 24px; min-height: 50px; padding: 12px 24px; border: 1px solid var(--clear); border-radius: var(--radius-small); font-weight: 650; line-height: 1.4; transition: background .2s, transform .2s; }
+.button:hover { transform: translateY(-2px); }
+.button-primary { color: var(--on-primary); background: var(--primary); }
+.button-primary:hover { background: var(--primary-hover); }
+.button-secondary { border-color: var(--border); background: var(--surface); color: var(--text); }
+.button-secondary:hover { background: var(--surface-soft); }
+.button span, .text-link span { font-size: 1.3em; }
+.sr-only, .skip-link:not(:focus) { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.skip-link:focus { position: fixed; inset: 12px auto auto 12px; z-index: 50; padding: 10px 20px; color: var(--on-primary); background: var(--primary); }
+
+/* 3. HEADER: FLEXBOX CHO LOGO, MENU, CÁC NÚT */
+.site-header { position: sticky; top: 0; z-index: 20; background: var(--surface); border-bottom: 1px solid var(--border); }
+.header-inner { min-height: 90px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.brand { display: inline-flex; flex-shrink: 0; align-items: center; gap: 10px; font-size: 1.8rem; font-weight: 800; line-height: .95; letter-spacing: -.055em; }
+.brand-mark { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 12px; color: var(--on-primary); background: var(--primary); font-size: 2.3rem; font-weight: 700; letter-spacing: -.08em; padding-right: 3px; padding-bottom: 4px; }
+.brand-sub { display: block; margin-top: 6px; font-size: .625rem; letter-spacing: .26em; line-height: 1; }
+.main-nav { display: flex; justify-content: center; align-items: center; gap: 25px; }
+.main-nav a { font-size: .9375rem; font-weight: 600; padding-block: 10px; transition: color .2s; }
+.main-nav a:hover { color: var(--primary); }
+.main-nav .nav-register { padding: 9px 15px; border: 1px solid var(--border); border-radius: var(--radius-small); }
+.theme-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 42px; border: 0; padding: 8px 0 8px 12px; font-size: .875rem; background: var(--clear); white-space: nowrap; }
+#theme-icon { font-size: 1.35rem; line-height: 1; }
+.menu-toggle { display: none; border: 1px solid var(--border); background: var(--surface); border-radius: var(--radius-small); width: 44px; height: 44px; font-size: 1.3rem; }
+
+/* 4. BANNER */
+.hero { background: var(--hero-bg); padding-block: 66px 60px; overflow: clip; }
+.hero-grid { display: grid; grid-template-columns: 1.08fr 1fr; align-items: center; gap: 58px; }
+.hero h1 span { color: var(--primary); }
+.hero-description { max-width: 440px; margin-top: 24px; color: var(--muted); font-size: 1.0625rem; line-height: 1.8; }
+.hero-copy > .button { margin-top: 30px; }
+.hero-facts { display: flex; align-items: flex-start; gap: 28px; margin-top: 40px; padding-top: 25px; border-top: 1px solid var(--border); }
+.hero-facts > div { display: flex; flex-direction: column; gap: 3px; }
+.hero-facts strong { font-size: 1.6rem; line-height: 1.2; }
+.hero-facts span { color: var(--muted); font-size: .875rem; }
+.hero-visual { position: relative; min-width: 0; padding: 0 0 22px 18px; }
+.hero-visual::before { content: ""; position: absolute; inset: 22px 18px 0 0; border-radius: 20px; background: var(--primary); }
+.hero-visual img { position: relative; width: 100%; height: 460px; object-fit: cover; border-radius: 20px; }
+.hero-visual figcaption { position: absolute; right: -12px; bottom: 52px; display: flex; align-items: center; gap: 16px; padding: 18px 22px; background: var(--surface); box-shadow: var(--shadow); border-radius: 12px; font-size: .9375rem; line-height: 1.5; }
+.caption-icon { display: grid; place-items: center; width: 40px; height: 40px; background: var(--hero-bg); color: var(--primary); border-radius: 50%; font-size: 1.5rem; }
+.image-label { position: absolute; bottom: 2px; right: 40px; color: var(--on-primary); font-size: .75rem; letter-spacing: .14em; font-weight: 700; }
+
+/* 5. KHÓA HỌC: GRID 3 CỘT. FLEXBOX CHO NỘI DUNG TRONG THẺ */
+.section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 36px; }
+.section-heading > p { color: var(--muted); max-width: 380px; }
+.course-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+.course-card { min-width: 0; display: flex; flex-direction: column; border: 1px solid var(--border); background: var(--surface); border-radius: var(--radius); overflow: hidden; transition: transform .2s, box-shadow .2s; }
+.course-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+.course-image { position: relative; background: var(--surface-soft); }
+.course-image img { width: 100%; aspect-ratio: 16/10; height: auto; object-fit: cover; }
+.category { position: absolute; left: 18px; top: 18px; padding: 4px 11px; border-radius: 6px; color: var(--badge-text); background: var(--badge-bg); font-size: .8125rem; font-weight: 650; }
+.course-body { flex: 1; display: flex; flex-direction: column; padding: 22px; }
+.course-number { color: var(--muted); font-size: .75rem; font-weight: 700; letter-spacing: .12em; margin-bottom: 8px; }
+.course-description { margin-block: 12px 18px; color: var(--muted); font-size: .9375rem; }
+.course-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 7px 10px; font-size: .8125rem; }
+.course-meta span { padding: 3px 8px; border-radius: 5px; background: var(--surface-soft); }
+.course-teacher { color: var(--muted); font-size: .8125rem; margin-block: 15px 22px; }
+.course-teacher strong { font-weight: 600; }
+.course-bottom { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 18px; border-top: 1px solid var(--border); margin-top: auto; }
+.course-bottom p { display: flex; flex-direction: column; gap: 2px; }
+.course-bottom small { color: var(--muted); font-size: .75rem; }
+.course-bottom strong { font-size: 1.2rem; }
+.course-link { display: inline-flex; align-items: center; gap: 7px; color: var(--primary); font-size: .875rem; font-weight: 650; padding-block: 8px; white-space: nowrap; }
+.course-link:hover, .text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.teachers { margin-top: 65px; padding-block: 34px; border-block: 1px solid var(--border); }
+.teachers .eyebrow { margin-bottom: 10px; }
+.teachers h2 { font-size: 1.6rem; }
+.teacher-list { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 26px; margin-top: 28px; }
+.teacher { display: flex; align-items: center; gap: 14px; }
+.teacher h3 { font-size: 1rem; }
+.teacher p { color: var(--muted); font-size: .875rem; margin-top: 5px; }
+.avatar { flex-shrink: 0; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; color: var(--primary); background: var(--hero-bg); font-size: .875rem; font-weight: 700; }
+.avatar-warm { color: var(--avatar-warm-text); background: var(--avatar-warm); }
+.avatar-cool { color: var(--avatar-cool-text); background: var(--avatar-cool); }
+.tuition { display: grid; grid-template-columns: .8fr 1.7fr; gap: 60px; margin-top: 64px; align-items: center; }
+.tuition-intro > p:not(.eyebrow) { margin-block: 18px; color: var(--muted); }
+.text-link { display: inline-flex; align-items: center; gap: 15px; color: var(--primary); font-weight: 650; }
+table { width: 100%; border-collapse: collapse; font-size: .9375rem; table-layout: fixed; }
+th, td { padding: 16px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+thead th { background: var(--surface-soft); color: var(--muted); font-size: .875rem; font-weight: 600; }
+th:first-child { width: 49%; }
+th:nth-child(2) { width: 21%; }
+tbody th { font-weight: 600; }
+td:last-child, th:last-child { text-align: right; }
+td:last-child { font-weight: 650; white-space: nowrap; }
+
+/* 6. FORM: GRID CHIA CỘT, FLEXBOX CĂN NHÓM RADIO/CHECKBOX/NÚT */
+.registration { background: var(--hero-bg); }
+.registration-grid { display: grid; grid-template-columns: .8fr 1.4fr; gap: 68px; align-items: start; }
+.registration-intro { padding-top: 18px; }
+.registration-intro > h2 { font-size: clamp(2.4rem, 4vw, 3.5rem); }
+.registration-intro > p:not(.eyebrow) { margin-top: 22px; color: var(--muted); }
+.registration-steps { list-style: none; padding: 0; margin-block: 35px; }
+.registration-steps li { display: flex; align-items: center; gap: 14px; margin-block: 16px; font-size: .9375rem; }
+.registration-steps span { display: grid; place-items: center; height: 32px; width: 32px; border-radius: 50%; border: 1px solid var(--border); color: var(--primary); font-size: .8125rem; font-weight: 700; }
+.selected-summary { border-top: 1px solid var(--border); padding-top: 28px; }
+.selected-summary > p { font-size: .75rem; letter-spacing: .1em; color: var(--muted); font-weight: 700; }
+.selected-summary h3 { margin-block: 10px; font-size: 1.25rem; }
+.selected-summary > span { font-size: .9375rem; color: var(--muted); }
+.registration-form { background: var(--surface); border: 1px solid var(--border); padding: 32px; border-radius: 20px; box-shadow: var(--shadow); min-width: 0; }
+.form-heading { margin-bottom: 26px; }
+.form-heading h3 { font-size: 1.5rem; }
+.form-heading p { font-size: .875rem; color: var(--muted); margin-top: 8px; }
+.required { color: var(--error); }
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 22px 20px; }
+.field { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.field > label, legend { font-size: .875rem; font-weight: 650; }
+.full-width { grid-column: 1 / -1; }
+input:not([type="radio"]):not([type="checkbox"]), select, textarea { width: 100%; min-width: 0; min-height: 48px; border: 1px solid var(--border); border-radius: var(--radius-small); padding: 11px 13px; background: var(--surface); color: var(--text); font-size: 1rem; transition: border-color .2s; }
+input::placeholder, textarea::placeholder { color: var(--muted); opacity: 1; }
+input:focus, select:focus, textarea:focus { border-color: var(--primary); }
+textarea { resize: vertical; min-height: 110px; }
+fieldset { margin: 0; padding: 0; border: 0; }
+legend { padding: 0; margin-bottom: 9px; }
+.choice-row { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+.choice { display: inline-flex; align-items: center; gap: 8px; padding: 9px 10px; border: 1px solid var(--border); border-radius: var(--radius-small); min-height: 44px; font-size: .875rem; cursor: pointer; }
+.choice:has(input:checked) { border-color: var(--primary); background: var(--hero-bg); }
+input[type="radio"], input[type="checkbox"] { width: 17px; height: 17px; flex-shrink: 0; margin: 0; accent-color: var(--primary); cursor: pointer; }
+.field-hint { margin-top: -4px; font-size: .875rem; color: var(--muted); }
+.field-error { color: var(--error); font-size: .875rem; line-height: 1.4; }
+.field-error:empty { display: none; }
+[aria-invalid="true"]:not(fieldset) { border-color: var(--error) !important; }
+fieldset[aria-invalid="true"] .choice { border-color: var(--error); }
+.form-actions { display: flex; align-items: center; gap: 12px; margin-top: 26px; }
+.form-actions > .button-primary { flex: 1; }
+.demo-note { color: var(--muted); font-size: .8125rem; line-height: 1.55; margin-top: 18px; }
+.form-error { margin-top: 20px; color: var(--error); background: var(--error-bg); padding: 12px; border-radius: var(--radius-small); font-size: .875rem; }
+.form-success { margin-top: 22px; padding: 20px; border-radius: var(--radius-small); background: var(--success-bg); color: var(--success); overflow-wrap: anywhere; }
+.form-success h4 { font-size: 1.0625rem; }
+.form-success p { margin-top: 8px; font-size: .875rem; }
+
+/* 7. FOOTER */
+.site-footer { background: var(--footer-bg); color: var(--footer-text); padding-top: 46px; }
+.footer-top { display: grid; grid-template-columns: 1.4fr 1fr .65fr; gap: 44px; padding-bottom: 38px; }
+.footer-top > div > p { margin-top: 20px; color: var(--footer-muted); font-size: .9375rem; }
+address, .footer-social { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; font-style: normal; font-size: .9375rem; }
+address strong, .footer-social strong { margin-bottom: 6px; }
+address a, address span, .footer-social a, .footer-social small { color: var(--footer-muted); }
+.footer-top a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.footer-social small { font-size: .75rem; }
+.footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px 30px; border-top: 1px solid var(--footer-border); padding-block: 22px; color: var(--footer-muted); font-size: .8125rem; }
+
+/* 8. RESPONSIVE: LAPTOP >= 1024PX, TABLET 768–1023PX, MOBILE <= 767PX */
+@media (min-width: 1024px) {
+  .course-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container { width: calc(100% - 48px); }
+  .header-inner { flex-wrap: wrap; gap: 14px; padding-block: 17px; min-height: 84px; }
+  .main-nav { order: 3; flex-basis: 100%; justify-content: space-between; gap: 16px; }
+  .main-nav a { padding-block: 5px; }
+  .hero-grid { gap: 30px; }
+  .hero { padding-block: 45px; }
+  .hero h1 { font-size: 2.75rem; }
+  .hero-visual img { height: 420px; }
+  .hero-visual figcaption { right: -5px; padding: 15px; }
+  .hero-facts { gap: 20px; }
+  .hero-facts span { font-size: .8125rem; }
+  .course-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .teacher-list { grid-template-columns: 1fr; gap: 20px; }
+  .tuition { grid-template-columns: .75fr 1.6fr; gap: 28px; }
+  .registration-grid { grid-template-columns: 1fr; gap: 32px; }
+  .registration-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 32px; }
+  .registration-intro > .eyebrow, .registration-intro > h2, .registration-intro > p { grid-column: 1; margin: 0; }
+  .registration-steps { grid-column: 2; grid-row: 1 / 4; margin: 0; }
+  .selected-summary { grid-column: 1 / -1; }
+  .footer-top { grid-template-columns: 1.2fr 1fr; }
+}
+@media (max-width: 767px) {
+  html { scroll-padding-top: 90px; }
+  .container { width: calc(100% - 36px); }
+  .section-space { padding-block: 48px; }
+  .header-inner { min-height: 76px; gap: 10px; flex-wrap: wrap; }
+  .brand { font-size: 1.6rem; gap: 8px; }
+  .brand-mark { width: 38px; height: 38px; font-size: 2rem; }
+  .brand-sub { font-size: .5625rem; }
+  .theme-toggle { margin-left: auto; padding-inline: 8px; width: 44px; height: 44px; }
+  #theme-label { display: none; }
+  .menu-toggle { display: block; order: 3; }
+  .main-nav { display: none; order: 4; width: 100%; padding-block: 4px 18px; align-items: stretch; flex-direction: column; gap: 4px; }
+  .main-nav.is-open { display: flex; }
+  .main-nav a { padding: 10px 14px; border-radius: var(--radius-small); }
+  .main-nav a:hover { background: var(--hero-bg); }
+  .hero { padding-block: 42px 32px; }
+  .hero-grid { grid-template-columns: minmax(0,1fr); gap: 38px; }
+  .hero h1 { font-size: clamp(2.45rem, 9.3vw, 3.5rem); }
+  .eyebrow { font-size: .75rem; letter-spacing: .08em; margin-bottom: 15px; }
+  .hero-description { margin-top: 20px; font-size: 1rem; }
+  .hero-copy > .button { margin-top: 24px; }
+  .hero-facts { justify-content: space-between; gap: 10px; margin-top: 30px; padding-top: 22px; }
+  .hero-facts span { font-size: .75rem; }
+  .hero-facts strong { font-size: 1.45rem; }
+  .hero-visual { padding-left: 10px; }
+  .hero-visual img { height: 300px; }
+  .hero-visual figcaption { right: 8px; bottom: 45px; padding: 13px 16px; }
+  .section-heading { flex-direction: column; align-items: flex-start; gap: 20px; margin-bottom: 28px; }
+  .desktop-break { display: none; }
+  .course-grid { grid-template-columns: minmax(0,1fr); gap: 22px; }
+  .course-body { padding: 23px; }
+  .course-image img { aspect-ratio: 16/9; }
+  .course-meta, .course-teacher { font-size: .875rem; }
+  .teachers { margin-top: 42px; padding-block: 30px; }
+  .teacher-list { grid-template-columns: 1fr; gap: 22px; }
+  .tuition { grid-template-columns: minmax(0,1fr); gap: 26px; margin-top: 40px; }
+  .tuition-intro h2 br { display: none; }
+  table { font-size: .875rem; }
+  th, td { padding: 14px 6px; overflow-wrap: break-word; }
+  thead th { font-size: .8125rem; }
+  th:first-child { width: 44%; }
+  th:nth-child(2) { width: 22%; }
+  .registration-grid { grid-template-columns: minmax(0,1fr); gap: 32px; }
+  .registration-intro { padding-top: 0; }
+  .registration-intro > h2 { font-size: 2.65rem; }
+  .registration-steps { margin-block: 24px; }
+  .selected-summary { padding-top: 22px; }
+  .registration-form { padding: 24px 18px; border-radius: var(--radius); }
+  .form-grid { grid-template-columns: minmax(0,1fr); gap: 20px; }
+  .choice-row { gap: 9px; }
+  .choice { padding: 9px; }
+  .form-actions { flex-wrap: wrap; }
+  .form-actions > .button { padding-inline: 18px; }
+  .footer-top { grid-template-columns: minmax(0,1fr); gap: 30px; }
+  .footer-bottom { flex-direction: column; gap: 8px; }
+}
+/* Tôn trọng cài đặt giảm chuyển động; không ẩn nội dung khi CDN bị chặn. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
