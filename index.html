@@ -1,478 +1,509 @@
 <!DOCTYPE html>
 <html lang="vi" data-theme="light">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Khám phá 6 khóa học tại Forma Academy: lập trình web, thiết kế, marketing, dữ liệu, tiếng Anh và PowerPoint. Chọn khóa học và đăng ký lịch học phù hợp.">
-    <meta name="theme-color" content="#2049db">
-    <title>Forma Academy | Khóa học trực tuyến &amp; Đăng ký học</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='16'%20fill='%232049db'/%3E%3Cpath%20d='M19%2047V17h29v8H28v5h16v8H28v9Z'%20fill='white'/%3E%3C/svg%3E">
-    <!-- Animate.css được nhúng qua CDN theo yêu cầu của đề. -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-  </head>
-  <body class="page-layout">
-    <a class="skip-link" href="#noi-dung">Bỏ qua menu, đến nội dung</a>
-    <!-- KHỐI 1: HEADER + MENU. Flexbox sắp xếp logo, menu và các nút. -->
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="brand" href="#trang-chu" aria-label="Forma Academy — Trang chủ">
-          <span class="brand-mark" aria-hidden="true">f.</span>
-          <span>forma<span class="brand-sub">ACADEMY</span>
-          </span>
-        </a>
-        <button class="menu-toggle" type="button" aria-controls="menu-chinh" aria-expanded="false" aria-label="Mở menu điều hướng">
-          <span aria-hidden="true">☰</span>
-        </button>
-        <nav id="menu-chinh" class="main-nav" aria-label="Menu chính">
-          <a href="#trang-chu">Trang chủ</a>
-          <a href="#khoa-hoc">Khóa học</a>
-          <a href="#giang-vien">Giảng viên</a>
-          <a href="#hoc-phi">Học phí</a>
-          <a class="nav-register" href="#dang-ky">Đăng ký</a>
-        </nav>
-        <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="Bật chế độ tối">
-          <span id="theme-icon" aria-hidden="true">☾</span>
-          <span id="theme-label">Chế độ tối</span>
-        </button>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Khám phá 6 khóa học tại Forma Academy: lập trình web, thiết kế, marketing, dữ liệu, tiếng Anh và PowerPoint. Chọn khóa học và đăng ký lịch học phù hợp.">
+  <meta name="theme-color" content="#2049db">
+  <title>Forma Academy | Khóa học trực tuyến &amp; Đăng ký học</title>
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='16'%20fill='%232049db'/%3E%3Cpath%20d='M19%2047V17h29v8H28v5h16v8H28v9Z'%20fill='white'/%3E%3C/svg%3E">
+  <!-- Animate.css được nhúng qua CDN theo yêu cầu của đề. -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body class="page-layout">
+  <a class="skip-link" href="#noi-dung">Bỏ qua menu, đến nội dung</a>
+  <!-- KHỐI 1: HEADER + MENU. Flexbox sắp xếp logo, menu và các nút. -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#trang-chu" aria-label="Forma Academy — Trang chủ">
+        <span class="brand-mark" aria-hidden="true">f.</span>
+        <span>forma<span class="brand-sub">ACADEMY</span>
+        </span>
+      </a>
+      <button class="menu-toggle" type="button" aria-controls="menu-chinh" aria-expanded="false"
+        aria-label="Mở menu điều hướng">
+        <span aria-hidden="true">☰</span>
+      </button>
+      <nav id="menu-chinh" class="main-nav" aria-label="Menu chính">
+        <a href="#trang-chu">Trang chủ</a>
+        <a href="#khoa-hoc">Khóa học</a>
+        <a href="#giang-vien">Giảng viên</a>
+        <a href="#hoc-phi">Học phí</a>
+        <a class="nav-register" href="#dang-ky">Đăng ký</a>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="Bật chế độ tối">
+        <span id="theme-icon" aria-hidden="true">☾</span>
+        <span id="theme-label">Chế độ tối</span>
+      </button>
+    </div>
+  </header>
+  <main id="noi-dung">
+    <!-- KHỐI 2: BANNER. Nội dung và ảnh lớp học đặt trong CSS Grid. -->
+    <section id="trang-chu" class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy animate__animated animate__fadeInUp">
+          <p class="eyebrow">TRUNG TÂM ĐÀO TẠO FORMA ACADEMY</p>
+          <h1 id="hero-title">Học kỹ năng mới.<br>
+            <span>Mở lối tương lai.</span>
+          </h1>
+          <p class="hero-description">Từ điều bạn muốn học đến điều bạn có thể làm. Bắt đầu với những khóa học thực
+            tiễn, được hướng dẫn từng bước.</p>
+          <a class="button button-primary" href="#khoa-hoc">Xem khóa học <span aria-hidden="true">↗</span>
+          </a>
+          <div class="hero-facts" aria-label="Thông tin khóa học">
+            <div>
+              <strong>06</strong>
+              <span>Khóa học thực tiễn</span>
+            </div>
+            <div>
+              <strong>03</strong>
+              <span>Mức trình độ</span>
+            </div>
+            <div>
+              <strong>04</strong>
+              <span>Ca học linh hoạt</span>
+            </div>
+          </div>
+        </div>
+        <figure class="hero-visual animate__animated animate__fadeInRight">
+          <img src="assets/hero.jpg" alt="Học viên cùng trao đổi trong một lớp học thực hành" width="1200" height="900"
+            fetchpriority="high">
+          <figcaption>
+            <span class="caption-icon" aria-hidden="true">↗</span>
+            <span>Học cùng nhau.<br>
+              <strong>Tiến xa hơn mỗi ngày.</strong>
+            </span>
+          </figcaption>
+          <span class="image-label">LEARN. CREATE. GROW.</span>
+        </figure>
       </div>
-    </header>
-    <main id="noi-dung">
-      <!-- KHỐI 2: BANNER. Nội dung và ảnh lớp học đặt trong CSS Grid. -->
-      <section id="trang-chu" class="hero" aria-labelledby="hero-title">
-        <div class="container hero-grid">
-          <div class="hero-copy animate__animated animate__fadeInUp">
-            <p class="eyebrow">TRUNG TÂM ĐÀO TẠO FORMA ACADEMY</p>
-            <h1 id="hero-title">Học kỹ năng mới.<br>
-              <span>Mở lối tương lai.</span>
-            </h1>
-            <p class="hero-description">Từ điều bạn muốn học đến điều bạn có thể làm. Bắt đầu với những khóa học thực tiễn, được hướng dẫn từng bước.</p>
-            <a class="button button-primary" href="#khoa-hoc">Xem khóa học <span aria-hidden="true">↗</span>
-            </a>
-            <div class="hero-facts" aria-label="Thông tin khóa học">
-              <div>
-                <strong>06</strong>
-                <span>Khóa học thực tiễn</span>
-              </div>
-              <div>
-                <strong>03</strong>
-                <span>Mức trình độ</span>
-              </div>
-              <div>
-                <strong>04</strong>
-                <span>Ca học linh hoạt</span>
-              </div>
-            </div>
-          </div>
-          <figure class="hero-visual animate__animated animate__fadeInRight">
-            <img src="assets/hero.jpg" alt="Học viên cùng trao đổi trong một lớp học thực hành" width="1200" height="900" fetchpriority="high">
-            <figcaption>
-              <span class="caption-icon" aria-hidden="true">↗</span>
-              <span>Học cùng nhau.<br>
-                <strong>Tiến xa hơn mỗi ngày.</strong>
-              </span>
-            </figcaption>
-            <span class="image-label">LEARN. CREATE. GROW.</span>
-          </figure>
-        </div>
-      </section>
-      <!-- KHỐI 3: DANH SÁCH NỘI DUNG. 6 khóa học + thông tin giảng viên/học phí. -->
-      <section id="khoa-hoc" class="catalog section-space" aria-labelledby="courses-title">
-        <div class="container">
-          <div class="section-heading animate__animated animate__fadeInUp">
-            <div>
-              <p class="eyebrow">TÌM ĐIỂM BẮT ĐẦU CỦA BẠN</p>
-              <h2 id="courses-title">Một kỹ năng mới.<br>Nhiều cơ hội hơn.</h2>
-            </div>
-            <p>Chọn một trong 6 khóa học phù hợp với<br class="desktop-break"> mục tiêu và nhịp học của bạn.</p>
-          </div>
-          <div class="course-grid">
-            <article class="course-card" data-course="web" data-fee="2490000" data-duration="8 tuần · 24 buổi">
-              <div class="course-image">
-                <img src="assets/web.jpg" alt="Màn hình máy tính hiển thị mã lập trình web" width="800" height="520" loading="lazy">
-                <span class="category">Công nghệ</span>
-              </div>
-              <div class="course-body">
-                <p class="course-number">KHÓA 01</p>
-                <h3>Lập trình Web cơ bản</h3>
-                <p class="course-description">Tự xây dựng website đầu tiên với HTML, CSS và JavaScript.</p>
-                <div class="course-meta">
-                  <span>8 tuần · 24 buổi</span>
-                  <span>Mới bắt đầu</span>
-                </div>
-                <p class="course-teacher">Hướng dẫn: <strong>Nguyễn Minh Anh</strong>
-                </p>
-                <div class="course-bottom">
-                  <p>
-                    <small>Học phí trọn khóa</small>
-                    <strong>2.490.000đ</strong>
-                  </p>
-                  <a class="course-link" href="#dang-ky" data-select-course="web" aria-label="Chọn khóa Lập trình Web cơ bản">Chọn khóa <span aria-hidden="true">↗</span>
-                  </a>
-                </div>
-              </div>
-            </article>
-            <article class="course-card" data-course="design" data-fee="2190000" data-duration="6 tuần · 18 buổi">
-              <div class="course-image">
-                <img src="assets/design.jpg" alt="Bàn làm việc sáng tạo với các công cụ thiết kế" width="800" height="520" loading="lazy">
-                <span class="category">Sáng tạo</span>
-              </div>
-              <div class="course-body">
-                <p class="course-number">KHÓA 02</p>
-                <h3>Thiết kế đồ họa</h3>
-                <p class="course-description">Làm chủ màu sắc, bố cục và thiết kế ấn phẩm truyền thông.</p>
-                <div class="course-meta">
-                  <span>6 tuần · 18 buổi</span>
-                  <span>Mới bắt đầu</span>
-                </div>
-                <p class="course-teacher">Hướng dẫn: <strong>Trần Hoài Nam</strong>
-                </p>
-                <div class="course-bottom">
-                  <p>
-                    <small>Học phí trọn khóa</small>
-                    <strong>2.190.000đ</strong>
-                  </p>
-                  <a class="course-link" href="#dang-ky" data-select-course="design" aria-label="Chọn khóa Thiết kế đồ họa">Chọn khóa <span aria-hidden="true">↗</span>
-                  </a>
-                </div>
-              </div>
-            </article>
-            <article class="course-card" data-course="marketing" data-fee="2790000" data-duration="8 tuần · 24 buổi">
-              <div class="course-image">
-                <img src="assets/marketing.jpg" alt="Nhóm cộng tác lên ý tưởng cho chiến dịch truyền thông" width="800" height="520" loading="lazy">
-                <span class="category">Kinh doanh</span>
-              </div>
-              <div class="course-body">
-                <p class="course-number">KHÓA 03</p>
-                <h3>Digital Marketing</h3>
-                <p class="course-description">Lập kế hoạch nội dung và đo lường hiệu quả chiến dịch số.</p>
-                <div class="course-meta">
-                  <span>8 tuần · 24 buổi</span>
-                  <span>Đã biết cơ bản</span>
-                </div>
-                <p class="course-teacher">Hướng dẫn: <strong>Trần Hoài Nam</strong>
-                </p>
-                <div class="course-bottom">
-                  <p>
-                    <small>Học phí trọn khóa</small>
-                    <strong>2.790.000đ</strong>
-                  </p>
-                  <a class="course-link" href="#dang-ky" data-select-course="marketing" aria-label="Chọn khóa Digital Marketing">Chọn khóa <span aria-hidden="true">↗</span>
-                  </a>
-                </div>
-              </div>
-            </article>
-            <article class="course-card" data-course="data" data-fee="3290000" data-duration="10 tuần · 30 buổi">
-              <div class="course-image">
-                <img src="assets/data.jpg" alt="Màn hình phân tích dữ liệu với các biểu đồ thống kê" width="800" height="520" loading="lazy">
-                <span class="category">Dữ liệu</span>
-              </div>
-              <div class="course-body">
-                <p class="course-number">KHÓA 04</p>
-                <h3>Phân tích dữ liệu</h3>
-                <p class="course-description">Biến dữ liệu thành thông tin hữu ích với Excel và Power BI.</p>
-                <div class="course-meta">
-                  <span>10 tuần · 30 buổi</span>
-                  <span>Nâng cao</span>
-                </div>
-                <p class="course-teacher">Hướng dẫn: <strong>Nguyễn Minh Anh</strong>
-                </p>
-                <div class="course-bottom">
-                  <p>
-                    <small>Học phí trọn khóa</small>
-                    <strong>3.290.000đ</strong>
-                  </p>
-                  <a class="course-link" href="#dang-ky" data-select-course="data" aria-label="Chọn khóa Phân tích dữ liệu">Chọn khóa <span aria-hidden="true">↗</span>
-                  </a>
-                </div>
-              </div>
-            </article>
-            <article class="course-card" data-course="english" data-fee="1890000" data-duration="8 tuần · 24 buổi">
-              <div class="course-image">
-                <img src="assets/english.jpg" alt="Các học viên thảo luận và luyện giao tiếp cùng nhau" width="800" height="520" loading="lazy">
-                <span class="category">Ngoại ngữ</span>
-              </div>
-              <div class="course-body">
-                <p class="course-number">KHÓA 05</p>
-                <h3>Tiếng Anh giao tiếp</h3>
-                <p class="course-description">Luyện nghe, nói và phản xạ qua những tình huống hằng ngày.</p>
-                <div class="course-meta">
-                  <span>8 tuần · 24 buổi</span>
-                  <span>Mới bắt đầu</span>
-                </div>
-                <p class="course-teacher">Hướng dẫn: <strong>Lê Thảo Linh</strong>
-                </p>
-                <div class="course-bottom">
-                  <p>
-                    <small>Học phí trọn khóa</small>
-                    <strong>1.890.000đ</strong>
-                  </p>
-                  <a class="course-link" href="#dang-ky" data-select-course="english" aria-label="Chọn khóa Tiếng Anh giao tiếp">Chọn khóa <span aria-hidden="true">↗</span>
-                  </a>
-                </div>
-              </div>
-            </article>
-            <article class="course-card" data-course="powerpoint" data-fee="1290000" data-duration="4 tuần · 12 buổi">
-              <div class="course-image">
-                <img src="assets/powerpoint.jpg" alt="Người thuyết trình chia sẻ nội dung trên màn hình" width="800" height="520" loading="lazy">
-                <span class="category">Kỹ năng</span>
-              </div>
-              <div class="course-body">
-                <p class="course-number">KHÓA 06</p>
-                <h3>PowerPoint thực chiến</h3>
-                <p class="course-description">Thiết kế slide rõ ý, đẹp mắt và trình bày câu chuyện tự tin.</p>
-                <div class="course-meta">
-                  <span>4 tuần · 12 buổi</span>
-                  <span>Đã biết cơ bản</span>
-                </div>
-                <p class="course-teacher">Hướng dẫn: <strong>Lê Thảo Linh</strong>
-                </p>
-                <div class="course-bottom">
-                  <p>
-                    <small>Học phí trọn khóa</small>
-                    <strong>1.290.000đ</strong>
-                  </p>
-                  <a class="course-link" href="#dang-ky" data-select-course="powerpoint" aria-label="Chọn khóa PowerPoint thực chiến">Chọn khóa <span aria-hidden="true">↗</span>
-                  </a>
-                </div>
-              </div>
-            </article>
-          </div>
-          <aside id="giang-vien" class="teachers" aria-labelledby="teachers-title">
-            <div>
-              <p class="eyebrow">NGƯỜI ĐỒNG HÀNH</p>
-              <h2 id="teachers-title">Học cùng giảng viên</h2>
-            </div>
-            <div class="teacher-list">
-              <div class="teacher">
-                <span class="avatar" aria-hidden="true">MA</span>
-                <div>
-                  <h3>Nguyễn Minh Anh</h3>
-                  <p>Lập trình &amp; Phân tích dữ liệu</p>
-                </div>
-              </div>
-              <div class="teacher">
-                <span class="avatar avatar-warm" aria-hidden="true">HN</span>
-                <div>
-                  <h3>Trần Hoài Nam</h3>
-                  <p>Thiết kế &amp; Digital Marketing</p>
-                </div>
-              </div>
-              <div class="teacher">
-                <span class="avatar avatar-cool" aria-hidden="true">TL</span>
-                <div>
-                  <h3>Lê Thảo Linh</h3>
-                  <p>Tiếng Anh &amp; Thuyết trình</p>
-                </div>
-              </div>
-            </div>
-          </aside>
-          <section id="hoc-phi" class="tuition" aria-labelledby="tuition-title">
-            <div class="tuition-intro">
-              <p class="eyebrow">DỄ DÀNG LỰA CHỌN</p>
-              <h2 id="tuition-title">Học phí<br>rõ ràng.</h2>
-              <p>Xem nhanh thời lượng và học phí trọn khóa trước khi đăng ký.</p>
-              <a class="text-link" href="#dang-ky">Đăng ký khóa học <span aria-hidden="true">↗</span>
-              </a>
-            </div>
-            <table>
-              <caption class="sr-only">Bảng học phí và thời lượng của 6 khóa học</caption>
-              <thead>
-                <tr>
-                  <th scope="col">Khóa học</th>
-                  <th scope="col">Thời lượng</th>
-                  <th scope="col">Học phí</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Lập trình Web cơ bản</th>
-                  <td>8 tuần</td>
-                  <td>2.490.000đ</td>
-                </tr>
-                <tr>
-                  <th scope="row">Thiết kế đồ họa</th>
-                  <td>6 tuần</td>
-                  <td>2.190.000đ</td>
-                </tr>
-                <tr>
-                  <th scope="row">Digital Marketing</th>
-                  <td>8 tuần</td>
-                  <td>2.790.000đ</td>
-                </tr>
-                <tr>
-                  <th scope="row">Phân tích dữ liệu</th>
-                  <td>10 tuần</td>
-                  <td>3.290.000đ</td>
-                </tr>
-                <tr>
-                  <th scope="row">Tiếng Anh giao tiếp</th>
-                  <td>8 tuần</td>
-                  <td>1.890.000đ</td>
-                </tr>
-                <tr>
-                  <th scope="row">PowerPoint thực chiến</th>
-                  <td>4 tuần</td>
-                  <td>1.290.000đ</td>
-                </tr>
-              </tbody>
-            </table>
-          </section>
-        </div>
-      </section>
-      <!-- KHỐI 4: FORM. Đủ input, radio, checkbox, select, textarea, button. -->
-      <section id="dang-ky" class="registration section-space" aria-labelledby="register-title">
-        <div class="container registration-grid">
-          <div class="registration-intro">
-            <p class="eyebrow">BƯỚC TIẾP THEO CỦA BẠN</p>
-            <h2 id="register-title">Bắt đầu<br>từ hôm nay.</h2>
-            <p>Chọn điều bạn muốn học.<br>Chúng mình cùng lên lộ trình.</p>
-            <ol class="registration-steps">
-              <li>
-                <span>01</span>Điền thông tin của bạn</li>
-              <li>
-                <span>02</span>Chọn khóa học và ca học</li>
-              <li>
-                <span>03</span>Kiểm tra và đăng ký</li>
-            </ol>
-            <div id="selected-summary" class="selected-summary" aria-live="polite">
-              <p>KHÓA HỌC BẠN CHỌN</p>
-              <h3 id="selected-name">Bạn muốn học điều gì?</h3>
-              <span id="selected-detail">Chọn khóa học trong biểu mẫu bên cạnh.</span>
-            </div>
-          </div>
-          <form id="registration-form" class="registration-form" novalidate>
-            <div class="form-heading">
-              <h3>Đăng ký khóa học</h3>
-              <p>Các trường có <span class="required">*</span> là bắt buộc.</p>
-            </div>
-            <div class="form-grid">
-              <div class="field">
-                <label for="ho-ten">Họ và tên <span class="required">*</span>
-                </label>
-                <input id="ho-ten" name="hoTen" type="text" autocomplete="name" placeholder="Nguyễn Văn An" minlength="2" maxlength="80" required aria-describedby="ho-ten-error">
-                <small id="ho-ten-error" class="field-error"></small>
-              </div>
-              <div class="field">
-                <label for="ngay-sinh">Ngày sinh <span class="required">*</span>
-                </label>
-                <input id="ngay-sinh" name="ngaySinh" type="date" autocomplete="bday" required aria-describedby="ngay-sinh-error">
-                <small id="ngay-sinh-error" class="field-error"></small>
-              </div>
-              <div class="field">
-                <label for="email">Email <span class="required">*</span>
-                </label>
-                <input id="email" name="email" type="email" autocomplete="email" placeholder="ban@example.com" maxlength="120" required aria-describedby="email-error">
-                <small id="email-error" class="field-error"></small>
-              </div>
-              <div class="field">
-                <label for="dien-thoai">Điện thoại <span class="required">*</span>
-                </label>
-                <input id="dien-thoai" name="dienThoai" type="tel" autocomplete="tel" inputmode="tel" placeholder="0901 234 567" maxlength="20" required aria-describedby="dien-thoai-error">
-                <small id="dien-thoai-error" class="field-error"></small>
-              </div>
-              <fieldset class="field full-width" id="trinh-do-group" aria-describedby="trinh-do-error">
-                <legend>Trình độ hiện tại <span class="required">*</span>
-                </legend>
-                <div class="choice-row">
-                  <label class="choice" for="trinh-do-moi">
-                    <input id="trinh-do-moi" type="radio" name="trinhDo" value="Mới bắt đầu" required> Mới bắt đầu</label>
-                  <label class="choice" for="trinh-do-co-ban">
-                    <input id="trinh-do-co-ban" type="radio" name="trinhDo" value="Đã biết cơ bản"> Đã biết cơ bản</label>
-                  <label class="choice" for="trinh-do-nang-cao">
-                    <input id="trinh-do-nang-cao" type="radio" name="trinhDo" value="Nâng cao"> Nâng cao</label>
-                </div>
-                <small id="trinh-do-error" class="field-error"></small>
-              </fieldset>
-              <div class="field full-width">
-                <label for="khoa-muon-hoc">Khóa muốn học <span class="required">*</span>
-                </label>
-                <select id="khoa-muon-hoc" name="khoaHoc" required aria-describedby="khoa-muon-hoc-error">
-                  <option value="">Chọn khóa học phù hợp với bạn</option>
-                  <option value="web">Lập trình Web cơ bản</option>
-                  <option value="design">Thiết kế đồ họa</option>
-                  <option value="marketing">Digital Marketing</option>
-                  <option value="data">Phân tích dữ liệu</option>
-                  <option value="english">Tiếng Anh giao tiếp</option>
-                  <option value="powerpoint">PowerPoint thực chiến</option>
-                </select>
-                <small id="khoa-muon-hoc-error" class="field-error"></small>
-              </div>
-              <fieldset class="field full-width" id="ca-hoc-group" aria-describedby="ca-hoc-hint ca-hoc-error">
-                <legend>Ca học phù hợp <span class="required">*</span>
-                </legend>
-                <p id="ca-hoc-hint" class="field-hint">Có thể chọn nhiều ca học.</p>
-                <div class="choice-row">
-                  <label class="choice" for="ca-sang">
-                    <input id="ca-sang" type="checkbox" name="caHoc" value="Sáng"> Sáng</label>
-                  <label class="choice" for="ca-chieu">
-                    <input id="ca-chieu" type="checkbox" name="caHoc" value="Chiều"> Chiều</label>
-                  <label class="choice" for="ca-toi">
-                    <input id="ca-toi" type="checkbox" name="caHoc" value="Tối"> Tối</label>
-                  <label class="choice" for="ca-cuoi-tuan">
-                    <input id="ca-cuoi-tuan" type="checkbox" name="caHoc" value="Cuối tuần"> Cuối tuần</label>
-                </div>
-                <small id="ca-hoc-error" class="field-error"></small>
-              </fieldset>
-              <div class="field full-width">
-                <label for="muc-tieu">Mục tiêu học tập <span class="required">*</span>
-                </label>
-                <textarea id="muc-tieu" name="mucTieu" rows="4" maxlength="1000" placeholder="Bạn muốn làm được điều gì sau khóa học?" required aria-describedby="muc-tieu-error"></textarea>
-                <small id="muc-tieu-error" class="field-error"></small>
-              </div>
-            </div>
-            <p id="form-error" class="form-error" role="alert" hidden></p>
-            <div class="form-actions">
-              <button class="button button-primary" type="submit">Đăng ký <span aria-hidden="true">↗</span>
-              </button>
-              <button class="button button-secondary" type="reset">Nhập lại</button>
-            </div>
-            <p class="demo-note">Biểu mẫu thực hành: thông tin chỉ được kiểm tra trên trang, chưa gửi đến trung tâm.</p>
-            <div id="form-success" class="form-success" role="status" tabindex="-1" hidden>
-              <h4>Thông tin đăng ký hợp lệ!</h4>
-              <p id="success-message"></p>
-              <p>Đây là xác nhận minh họa; chưa có đăng ký được gửi đi.</p>
-            </div>
-            <noscript>
-              <p class="form-error">Hãy bật JavaScript để kiểm tra biểu mẫu và sử dụng chế độ sáng/tối.</p>
-            </noscript>
-          </form>
-        </div>
-      </section>
-    </main>
-    <!-- KHỐI 5: FOOTER. Thông tin trung tâm được dùng làm dữ liệu minh họa. -->
-    <footer class="site-footer">
+    </section>
+    <!-- KHỐI 3: DANH SÁCH NỘI DUNG. 6 khóa học + thông tin giảng viên/học phí. -->
+    <section id="khoa-hoc" class="catalog section-space" aria-labelledby="courses-title">
       <div class="container">
-        <div class="footer-top">
+        <div class="section-heading animate__animated animate__fadeInUp">
           <div>
-            <a class="brand" href="#trang-chu">
-              <span class="brand-mark" aria-hidden="true">f.</span>
-              <span>forma<span class="brand-sub">ACADEMY</span>
-              </span>
-            </a>
-            <p>Học kỹ năng mới. Mở lối tương lai.</p>
+            <p class="eyebrow">TÌM ĐIỂM BẮT ĐẦU CỦA BẠN</p>
+            <h2 id="courses-title">Một kỹ năng mới.<br>Nhiều cơ hội hơn.</h2>
           </div>
-          <address>
-            <strong>Liên hệ trung tâm</strong>
-            <span>123 Nguyễn Ái Quốc, Đồng Nai</span>
-            <a href="mailto:hello@forma.example">huycodm@gmail.com</a>
-            <a href="tel:02812345678">Hotline: 0862107570</a>
-          </address>
-          <div class="footer-social">
-            <strong>Kết nối</strong>
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook <span aria-hidden="true">↗</span>
+          <p>Chọn một trong 6 khóa học phù hợp với<br class="desktop-break"> mục tiêu và nhịp học của bạn.</p>
+        </div>
+        <div class="course-grid">
+          <article class="course-card" data-course="web" data-fee="2490000" data-duration="8 tuần · 24 buổi">
+            <div class="course-image">
+              <img src="assets/web.jpg" alt="Màn hình máy tính hiển thị mã lập trình web" width="800" height="520"
+                loading="lazy">
+              <span class="category">Công nghệ</span>
+            </div>
+            <div class="course-body">
+              <p class="course-number">KHÓA 01</p>
+              <h3>Lập trình Web cơ bản</h3>
+              <p class="course-description">Tự xây dựng website đầu tiên với HTML, CSS và JavaScript.</p>
+              <div class="course-meta">
+                <span>8 tuần · 24 buổi</span>
+                <span>Mới bắt đầu</span>
+              </div>
+              <p class="course-teacher">Hướng dẫn: <strong>Nguyễn Minh Anh</strong>
+              </p>
+              <div class="course-bottom">
+                <p>
+                  <small>Học phí trọn khóa</small>
+                  <strong>2.490.000đ</strong>
+                </p>
+                <a class="course-link" href="#dang-ky" data-select-course="web"
+                  aria-label="Chọn khóa Lập trình Web cơ bản">Chọn khóa <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="course-card" data-course="design" data-fee="2190000" data-duration="6 tuần · 18 buổi">
+            <div class="course-image">
+              <img src="assets/design.jpg" alt="Bàn làm việc sáng tạo với các công cụ thiết kế" width="800" height="520"
+                loading="lazy">
+              <span class="category">Sáng tạo</span>
+            </div>
+            <div class="course-body">
+              <p class="course-number">KHÓA 02</p>
+              <h3>Thiết kế đồ họa</h3>
+              <p class="course-description">Làm chủ màu sắc, bố cục và thiết kế ấn phẩm truyền thông.</p>
+              <div class="course-meta">
+                <span>6 tuần · 18 buổi</span>
+                <span>Mới bắt đầu</span>
+              </div>
+              <p class="course-teacher">Hướng dẫn: <strong>Trần Hoài Nam</strong>
+              </p>
+              <div class="course-bottom">
+                <p>
+                  <small>Học phí trọn khóa</small>
+                  <strong>2.190.000đ</strong>
+                </p>
+                <a class="course-link" href="#dang-ky" data-select-course="design"
+                  aria-label="Chọn khóa Thiết kế đồ họa">Chọn khóa <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="course-card" data-course="marketing" data-fee="2790000" data-duration="8 tuần · 24 buổi">
+            <div class="course-image">
+              <img src="assets/marketing.jpg" alt="Nhóm cộng tác lên ý tưởng cho chiến dịch truyền thông" width="800"
+                height="520" loading="lazy">
+              <span class="category">Kinh doanh</span>
+            </div>
+            <div class="course-body">
+              <p class="course-number">KHÓA 03</p>
+              <h3>Digital Marketing</h3>
+              <p class="course-description">Lập kế hoạch nội dung và đo lường hiệu quả chiến dịch số.</p>
+              <div class="course-meta">
+                <span>8 tuần · 24 buổi</span>
+                <span>Đã biết cơ bản</span>
+              </div>
+              <p class="course-teacher">Hướng dẫn: <strong>Trần Hoài Nam</strong>
+              </p>
+              <div class="course-bottom">
+                <p>
+                  <small>Học phí trọn khóa</small>
+                  <strong>2.790.000đ</strong>
+                </p>
+                <a class="course-link" href="#dang-ky" data-select-course="marketing"
+                  aria-label="Chọn khóa Digital Marketing">Chọn khóa <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="course-card" data-course="data" data-fee="3290000" data-duration="10 tuần · 30 buổi">
+            <div class="course-image">
+              <img src="assets/data.jpg" alt="Màn hình phân tích dữ liệu với các biểu đồ thống kê" width="800"
+                height="520" loading="lazy">
+              <span class="category">Dữ liệu</span>
+            </div>
+            <div class="course-body">
+              <p class="course-number">KHÓA 04</p>
+              <h3>Phân tích dữ liệu</h3>
+              <p class="course-description">Biến dữ liệu thành thông tin hữu ích với Excel và Power BI.</p>
+              <div class="course-meta">
+                <span>10 tuần · 30 buổi</span>
+                <span>Nâng cao</span>
+              </div>
+              <p class="course-teacher">Hướng dẫn: <strong>Nguyễn Minh Anh</strong>
+              </p>
+              <div class="course-bottom">
+                <p>
+                  <small>Học phí trọn khóa</small>
+                  <strong>3.290.000đ</strong>
+                </p>
+                <a class="course-link" href="#dang-ky" data-select-course="data"
+                  aria-label="Chọn khóa Phân tích dữ liệu">Chọn khóa <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="course-card" data-course="english" data-fee="1890000" data-duration="8 tuần · 24 buổi">
+            <div class="course-image">
+              <img src="assets/english.jpg" alt="Các học viên thảo luận và luyện giao tiếp cùng nhau" width="800"
+                height="520" loading="lazy">
+              <span class="category">Ngoại ngữ</span>
+            </div>
+            <div class="course-body">
+              <p class="course-number">KHÓA 05</p>
+              <h3>Tiếng Anh giao tiếp</h3>
+              <p class="course-description">Luyện nghe, nói và phản xạ qua những tình huống hằng ngày.</p>
+              <div class="course-meta">
+                <span>8 tuần · 24 buổi</span>
+                <span>Mới bắt đầu</span>
+              </div>
+              <p class="course-teacher">Hướng dẫn: <strong>Lê Thảo Linh</strong>
+              </p>
+              <div class="course-bottom">
+                <p>
+                  <small>Học phí trọn khóa</small>
+                  <strong>1.890.000đ</strong>
+                </p>
+                <a class="course-link" href="#dang-ky" data-select-course="english"
+                  aria-label="Chọn khóa Tiếng Anh giao tiếp">Chọn khóa <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="course-card" data-course="powerpoint" data-fee="1290000" data-duration="4 tuần · 12 buổi">
+            <div class="course-image">
+              <img src="assets/powerpoint.jpg" alt="Người thuyết trình chia sẻ nội dung trên màn hình" width="800"
+                height="520" loading="lazy">
+              <span class="category">Kỹ năng</span>
+            </div>
+            <div class="course-body">
+              <p class="course-number">KHÓA 06</p>
+              <h3>PowerPoint thực chiến</h3>
+              <p class="course-description">Thiết kế slide rõ ý, đẹp mắt và trình bày câu chuyện tự tin.</p>
+              <div class="course-meta">
+                <span>4 tuần · 12 buổi</span>
+                <span>Đã biết cơ bản</span>
+              </div>
+              <p class="course-teacher">Hướng dẫn: <strong>Lê Thảo Linh</strong>
+              </p>
+              <div class="course-bottom">
+                <p>
+                  <small>Học phí trọn khóa</small>
+                  <strong>1.290.000đ</strong>
+                </p>
+                <a class="course-link" href="#dang-ky" data-select-course="powerpoint"
+                  aria-label="Chọn khóa PowerPoint thực chiến">Chọn khóa <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <aside id="giang-vien" class="teachers" aria-labelledby="teachers-title">
+          <div>
+            <p class="eyebrow">NGƯỜI ĐỒNG HÀNH</p>
+            <h2 id="teachers-title">Học cùng giảng viên</h2>
+          </div>
+          <div class="teacher-list">
+            <div class="teacher">
+              <span class="avatar" aria-hidden="true">MA</span>
+              <div>
+                <h3>Nguyễn Minh Anh</h3>
+                <p>Lập trình &amp; Phân tích dữ liệu</p>
+              </div>
+            </div>
+            <div class="teacher">
+              <span class="avatar avatar-warm" aria-hidden="true">HN</span>
+              <div>
+                <h3>Trần Hoài Nam</h3>
+                <p>Thiết kế &amp; Digital Marketing</p>
+              </div>
+            </div>
+            <div class="teacher">
+              <span class="avatar avatar-cool" aria-hidden="true">TL</span>
+              <div>
+                <h3>Lê Thảo Linh</h3>
+                <p>Tiếng Anh &amp; Thuyết trình</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <section id="hoc-phi" class="tuition" aria-labelledby="tuition-title">
+          <div class="tuition-intro">
+            <p class="eyebrow">DỄ DÀNG LỰA CHỌN</p>
+            <h2 id="tuition-title">Học phí<br>rõ ràng.</h2>
+            <p>Xem nhanh thời lượng và học phí trọn khóa trước khi đăng ký.</p>
+            <a class="text-link" href="#dang-ky">Đăng ký khóa học <span aria-hidden="true">↗</span>
             </a>
-            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube <span aria-hidden="true">↗</span>
-            </a>
-            <small>Liên kết nền tảng minh họa</small>
+          </div>
+          <table>
+            <caption class="sr-only">Bảng học phí và thời lượng của 6 khóa học</caption>
+            <thead>
+              <tr>
+                <th scope="col">Khóa học</th>
+                <th scope="col">Thời lượng</th>
+                <th scope="col">Học phí</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Lập trình Web cơ bản</th>
+                <td>8 tuần</td>
+                <td>2.490.000đ</td>
+              </tr>
+              <tr>
+                <th scope="row">Thiết kế đồ họa</th>
+                <td>6 tuần</td>
+                <td>2.190.000đ</td>
+              </tr>
+              <tr>
+                <th scope="row">Digital Marketing</th>
+                <td>8 tuần</td>
+                <td>2.790.000đ</td>
+              </tr>
+              <tr>
+                <th scope="row">Phân tích dữ liệu</th>
+                <td>10 tuần</td>
+                <td>3.290.000đ</td>
+              </tr>
+              <tr>
+                <th scope="row">Tiếng Anh giao tiếp</th>
+                <td>8 tuần</td>
+                <td>1.890.000đ</td>
+              </tr>
+              <tr>
+                <th scope="row">PowerPoint thực chiến</th>
+                <td>4 tuần</td>
+                <td>1.290.000đ</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </section>
+    <!-- KHỐI 4: FORM. Đủ input, radio, checkbox, select, textarea, button. -->
+    <section id="dang-ky" class="registration section-space" aria-labelledby="register-title">
+      <div class="container registration-grid">
+        <div class="registration-intro">
+          <p class="eyebrow">BƯỚC TIẾP THEO CỦA BẠN</p>
+          <h2 id="register-title">Bắt đầu<br>từ hôm nay.</h2>
+          <p>Chọn điều bạn muốn học.<br>Chúng mình cùng lên lộ trình.</p>
+          <ol class="registration-steps">
+            <li>
+              <span>01</span>Điền thông tin của bạn
+            </li>
+            <li>
+              <span>02</span>Chọn khóa học và ca học
+            </li>
+            <li>
+              <span>03</span>Kiểm tra và đăng ký
+            </li>
+          </ol>
+          <div id="selected-summary" class="selected-summary" aria-live="polite">
+            <p>KHÓA HỌC BẠN CHỌN</p>
+            <h3 id="selected-name">Bạn muốn học điều gì?</h3>
+            <span id="selected-detail">Chọn khóa học trong biểu mẫu bên cạnh.</span>
           </div>
         </div>
-        <div class="footer-bottom">
-          <p>© <span id="current-year">2026</span> Forma Academy. Bảo lưu mọi quyền.</p>
-          <p>Website thực hành • Thông tin trung tâm minh họa</p>
+        <form id="registration-form" class="registration-form" novalidate>
+          <div class="form-heading">
+            <h3>Đăng ký khóa học</h3>
+            <p>Các trường có <span class="required">*</span> là bắt buộc.</p>
+          </div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="ho-ten">Họ và tên <span class="required">*</span>
+              </label>
+              <input id="ho-ten" name="hoTen" type="text" autocomplete="name" placeholder="Nguyễn Văn An" minlength="2"
+                maxlength="80" required aria-describedby="ho-ten-error">
+              <small id="ho-ten-error" class="field-error"></small>
+            </div>
+            <div class="field">
+              <label for="ngay-sinh">Ngày sinh <span class="required">*</span>
+              </label>
+              <input id="ngay-sinh" name="ngaySinh" type="date" autocomplete="bday" required
+                aria-describedby="ngay-sinh-error">
+              <small id="ngay-sinh-error" class="field-error"></small>
+            </div>
+            <div class="field">
+              <label for="email">Email <span class="required">*</span>
+              </label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="ban@example.com"
+                maxlength="120" required aria-describedby="email-error">
+              <small id="email-error" class="field-error"></small>
+            </div>
+            <div class="field">
+              <label for="dien-thoai">Điện thoại <span class="required">*</span>
+              </label>
+              <input id="dien-thoai" name="dienThoai" type="tel" autocomplete="tel" inputmode="tel"
+                placeholder="0901 234 567" maxlength="20" required aria-describedby="dien-thoai-error">
+              <small id="dien-thoai-error" class="field-error"></small>
+            </div>
+            <fieldset class="field full-width" id="trinh-do-group" aria-describedby="trinh-do-error">
+              <legend>Trình độ hiện tại <span class="required">*</span>
+              </legend>
+              <div class="choice-row">
+                <label class="choice" for="trinh-do-moi">
+                  <input id="trinh-do-moi" type="radio" name="trinhDo" value="Mới bắt đầu" required> Mới bắt đầu</label>
+                <label class="choice" for="trinh-do-co-ban">
+                  <input id="trinh-do-co-ban" type="radio" name="trinhDo" value="Đã biết cơ bản"> Đã biết cơ bản</label>
+                <label class="choice" for="trinh-do-nang-cao">
+                  <input id="trinh-do-nang-cao" type="radio" name="trinhDo" value="Nâng cao"> Nâng cao</label>
+              </div>
+              <small id="trinh-do-error" class="field-error"></small>
+            </fieldset>
+            <div class="field full-width">
+              <label for="khoa-muon-hoc">Khóa muốn học <span class="required">*</span>
+              </label>
+              <select id="khoa-muon-hoc" name="khoaHoc" required aria-describedby="khoa-muon-hoc-error">
+                <option value="">Chọn khóa học phù hợp với bạn</option>
+                <option value="web">Lập trình Web cơ bản</option>
+                <option value="design">Thiết kế đồ họa</option>
+                <option value="marketing">Digital Marketing</option>
+                <option value="data">Phân tích dữ liệu</option>
+                <option value="english">Tiếng Anh giao tiếp</option>
+                <option value="powerpoint">PowerPoint thực chiến</option>
+              </select>
+              <small id="khoa-muon-hoc-error" class="field-error"></small>
+            </div>
+            <fieldset class="field full-width" id="ca-hoc-group" aria-describedby="ca-hoc-hint ca-hoc-error">
+              <legend>Ca học phù hợp <span class="required">*</span>
+              </legend>
+              <p id="ca-hoc-hint" class="field-hint">Có thể chọn nhiều ca học.</p>
+              <div class="choice-row">
+                <label class="choice" for="ca-sang">
+                  <input id="ca-sang" type="checkbox" name="caHoc" value="Sáng"> Sáng</label>
+                <label class="choice" for="ca-chieu">
+                  <input id="ca-chieu" type="checkbox" name="caHoc" value="Chiều"> Chiều</label>
+                <label class="choice" for="ca-toi">
+                  <input id="ca-toi" type="checkbox" name="caHoc" value="Tối"> Tối</label>
+                <label class="choice" for="ca-cuoi-tuan">
+                  <input id="ca-cuoi-tuan" type="checkbox" name="caHoc" value="Cuối tuần"> Cuối tuần</label>
+              </div>
+              <small id="ca-hoc-error" class="field-error"></small>
+            </fieldset>
+            <div class="field full-width">
+              <label for="muc-tieu">Mục tiêu học tập <span class="required">*</span>
+              </label>
+              <textarea id="muc-tieu" name="mucTieu" rows="4" maxlength="1000"
+                placeholder="Bạn muốn làm được điều gì sau khóa học?" required
+                aria-describedby="muc-tieu-error"></textarea>
+              <small id="muc-tieu-error" class="field-error"></small>
+            </div>
+          </div>
+          <p id="form-error" class="form-error" role="alert" hidden></p>
+          <div class="form-actions">
+            <button class="button button-primary" type="submit">Đăng ký <span aria-hidden="true">↗</span>
+            </button>
+            <button class="button button-secondary" type="reset">Nhập lại</button>
+          </div>
+          <p class="demo-note">Biểu mẫu thực hành: thông tin chỉ được kiểm tra trên trang, chưa gửi đến trung tâm.</p>
+          <div id="form-success" class="form-success" role="status" tabindex="-1" hidden>
+            <h4>Thông tin đăng ký hợp lệ!</h4>
+            <p id="success-message"></p>
+            <p>Đây là xác nhận minh họa; chưa có đăng ký được gửi đi.</p>
+          </div>
+          <noscript>
+            <p class="form-error">Hãy bật JavaScript để kiểm tra biểu mẫu và sử dụng chế độ sáng/tối.</p>
+          </noscript>
+        </form>
+      </div>
+    </section>
+  </main>
+  <!-- KHỐI 5: FOOTER. Thông tin trung tâm được dùng làm dữ liệu minh họa. -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="brand" href="#trang-chu">
+            <span class="brand-mark" aria-hidden="true">f.</span>
+            <span>forma<span class="brand-sub">ACADEMY</span>
+            </span>
+          </a>
+          <p>Học kỹ năng mới. Mở lối tương lai.</p>
+        </div>
+        <address>
+          <strong>Liên hệ trung tâm</strong>
+          <span>123 Nguyễn Ái Quốc, Đồng Nai</span>
+          <a href="mailto:hello@forma.example">hello@forma.example</a>
+          <a href="tel:02812345678">Hotline: 028 1234 5678</a>
+        </address>
+        <div class="footer-social">
+          <strong>Kết nối</strong>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook <span
+              aria-hidden="true">↗</span>
+          </a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube <span
+              aria-hidden="true">↗</span>
+          </a>
+          <small>Liên kết nền tảng minh họa</small>
         </div>
       </div>
-    </footer>
-  </body>
+      <div class="footer-bottom">
+        <p>© <span id="current-year">2026</span> Forma Academy. Bảo lưu mọi quyền.</p>
+        <p>Website thực hành • Thông tin trung tâm minh họa</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
 </html>
