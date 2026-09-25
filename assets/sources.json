@@ -1,0 +1,119 @@
+{
+  "verified_on": "2026-09-25",
+  "reuse_summary": "Pexels permits free use and modification for website/marketing use. Attribution is not required but appreciated. Do not imply endorsement by pictured people or brands, sell unaltered copies, redistribute as stock, or use as a trademark.",
+  "license_url": "https://www.pexels.com/license/",
+  "assets": [
+    {
+      "file": "assets/hero.jpg",
+      "usage": "hero",
+      "source_page": "https://www.pexels.com/photo/group-of-diverse-students-doing-research-on-laptops-with-teacher-5940833/",
+      "image_url": "https://images.pexels.com/photos/5940833/pexels-photo-5940833.jpeg?cs=srgb&dl=pexels-kampus-5940833.jpg&fm=jpg",
+      "credit": "Photo by Kampus Production on Pexels",
+      "photographer": "Kampus Production",
+      "license": "Pexels License",
+      "license_url": "https://www.pexels.com/license/",
+      "dimensions": [
+        3943,
+        2629
+      ],
+      "alt_vi": "Nhóm học viên cùng học và trao đổi trong lớp học",
+      "notes": "Illustrative stock photography; not a photo of Forma Academy. Use object-fit: cover for landscape cards."
+    },
+    {
+      "file": "assets/web.jpg",
+      "usage": "web-development",
+      "source_page": "https://www.pexels.com/photo/person-using-macbook-pro-574077/",
+      "image_url": "https://images.pexels.com/photos/574077/pexels-photo-574077.jpeg?cs=srgb&dl=pexels-goumbik-574077.jpg&fm=jpg",
+      "credit": "Photo by Lukas Blazek on Pexels",
+      "photographer": "Lukas Blazek",
+      "license": "Pexels License",
+      "license_url": "https://www.pexels.com/license/",
+      "dimensions": [
+        6144,
+        4069
+      ],
+      "alt_vi": "Bàn tay lập trình trên máy tính xách tay",
+      "notes": "Illustrative stock photography; not a photo of Forma Academy. Use object-fit: cover for landscape cards."
+    },
+    {
+      "file": "assets/design.jpg",
+      "usage": "graphic-design",
+      "source_page": "https://www.pexels.com/photo/designer-at-desk-with-choice-of-colors-6444904/",
+      "image_url": "https://images.pexels.com/photos/6444904/pexels-photo-6444904.jpeg?cs=srgb&dl=pexels-rombo-1510555-6444904.jpg&fm=jpg",
+      "credit": "Photo by ROMBO on Pexels",
+      "photographer": "ROMBO",
+      "license": "Pexels License",
+      "license_url": "https://www.pexels.com/license/",
+      "dimensions": [
+        4848,
+        3456
+      ],
+      "alt_vi": "Nhà thiết kế làm việc với bảng màu và tài liệu",
+      "notes": "Illustrative stock photography; not a photo of Forma Academy. Use object-fit: cover for landscape cards."
+    },
+    {
+      "file": "assets/marketing.jpg",
+      "usage": "digital-marketing",
+      "source_page": "https://www.pexels.com/photo/business-people-looking-at-business-analytics-6829536/",
+      "image_url": "https://images.pexels.com/photos/6829536/pexels-photo-6829536.jpeg?cs=srgb&dl=pexels-kampus-6829536.jpg&fm=jpg",
+      "credit": "Photo by Kampus Production on Pexels",
+      "photographer": "Kampus Production",
+      "license": "Pexels License",
+      "license_url": "https://www.pexels.com/license/",
+      "dimensions": [
+        5854,
+        3908
+      ],
+      "alt_vi": "Nhóm cộng tác phân tích biểu đồ và lên kế hoạch",
+      "notes": "Illustrative stock photography; not a photo of Forma Academy. Use object-fit: cover for landscape cards."
+    },
+    {
+      "file": "assets/data.jpg",
+      "usage": "data-analysis",
+      "source_page": "https://www.pexels.com/photo/graph-on-laptop-screen-3861957/",
+      "image_url": "https://images.pexels.com/photos/3861957/pexels-photo-3861957.jpeg?cs=srgb&dl=pexels-thisisengineering-3861957.jpg&fm=jpg",
+      "credit": "Photo by ThisIsEngineering on Pexels",
+      "photographer": "ThisIsEngineering",
+      "license": "Pexels License",
+      "license_url": "https://www.pexels.com/license/",
+      "dimensions": [
+        7952,
+        5304
+      ],
+      "alt_vi": "Biểu đồ dữ liệu trên màn hình máy tính xách tay",
+      "notes": "Illustrative stock photography; not a photo of Forma Academy. Use object-fit: cover for landscape cards."
+    },
+    {
+      "file": "assets/english.jpg",
+      "usage": "english-communication",
+      "source_page": "https://www.pexels.com/photo/students-having-conversation-inside-the-classroom-6683485/",
+      "image_url": "https://images.pexels.com/photos/6683485/pexels-photo-6683485.jpeg?cs=srgb&dl=pexels-andy-barbour-6683485.jpg&fm=jpg",
+      "credit": "Photo by Andy Barbour on Pexels",
+      "photographer": "Andy Barbour",
+      "license": "Pexels License",
+      "license_url": "https://www.pexels.com/license/",
+      "dimensions": [
+        6471,
+        4314
+      ],
+      "alt_vi": "Nhóm học viên trao đổi trong lớp học",
+      "notes": "Illustrative stock photography; not a photo of Forma Academy. Use object-fit: cover for landscape cards."
+    },
+    {
+      "file": "assets/powerpoint.jpg",
+      "usage": "powerpoint-presentation",
+      "source_page": "https://www.pexels.com/photo/a-man-doing-a-presentation-in-a-business-meeting-7988686/",
+      "image_url": "https://images.pexels.com/photos/7988686/pexels-photo-7988686.jpeg?cs=srgb&dl=pexels-mikhail-nilov-7988686.jpg&fm=jpg",
+      "credit": "Photo by Mikhail Nilov on Pexels",
+      "photographer": "Mikhail Nilov",
+      "license": "Pexels License",
+      "license_url": "https://www.pexels.com/license/",
+      "dimensions": [
+        6016,
+        4016
+      ],
+      "alt_vi": "Buổi thuyết trình tại không gian làm việc hiện đại",
+      "notes": "Illustrative stock photography; not a photo of Forma Academy. Use object-fit: cover for landscape cards."
+    }
+  ]
+}
